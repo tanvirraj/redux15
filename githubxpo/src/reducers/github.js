@@ -1,12 +1,16 @@
 import {GET_USER_NAME} from '../actions/index';
 
-export default function(state=null, action){
+
+const getUserName = (state=[], action) => {
+    console.log("Action Received", action)
     switch(action.type){
         case GET_USER_NAME:
-            return state;
+            return action.payload.data;
         default:
-            return state
+            return state;
     }
     return state;
-}
+};
 
+
+export default getUserName;

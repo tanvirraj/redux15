@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import getUserName from './github';
 
 const rootReducer = combineReducers({
-    getUserName
+    name: getUserName
 });
 
 export default rootReducer;

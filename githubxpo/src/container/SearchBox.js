@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getUserName } from '../actions/index'
+import { githubUserName } from '../actions/index'
 import '../SearchBox.css'
 
 class SearchBox extends Component{
@@ -23,7 +23,7 @@ class SearchBox extends Component{
         event.preventDefault();
 
 
-        this.props.getUserName(this.state.text);
+        this.props.githubUserName(this.state.text);
         this.setState({text: ''})
     }
 
@@ -42,13 +42,23 @@ class SearchBox extends Component{
                   </div>
                   <button type="submit" className="btn btn-default submitButton">Submit</button>
                 </form>
+                <br/>
+                Name: {this.props.name.name}<br/>
+                Bio: {this.props.name.bio}<br/>
+                Location: {this.props.name.location}<br/>
+                Login {this.props.name.login}<br/>
+                <img src={this.props.name.avatar_url}/>
             </div>
         )
     }
 }
 
-function mapDispatchToProps(dispatch){
-    return bindActionCreators({ getUserName }, dispatch)
+function mapStateToProps({name}){
+    return { name }
 }
 
-export default connect(null, mapDispatchToProps)(SearchBox);
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({ githubUserName }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
