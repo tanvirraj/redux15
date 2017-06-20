@@ -1,7 +1,7 @@
 import {GET_USER_NAME} from '../actions/index';
 
 
-const getUserName = (state=[], action) => {
+const getUserName = (state={}, action) => {
     console.log("Action Received", action)
     switch(action.type){
         case GET_USER_NAME:
@@ -9,8 +9,7 @@ const getUserName = (state=[], action) => {
         default:
             return state;
     }
-    return state;
 };
 
-
+// this si
 export default getUserName;

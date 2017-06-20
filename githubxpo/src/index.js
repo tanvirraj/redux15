@@ -8,7 +8,6 @@ import ReduxPromise from 'redux-promise';
 
 import rootReducer from './reducers/rootReducer'
 
-
 import App from './components/index'
 
 

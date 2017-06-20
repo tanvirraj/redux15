@@ -47,14 +47,14 @@ class SearchBox extends Component{
                 Bio: {this.props.name.bio}<br/>
                 Location: {this.props.name.location}<br/>
                 Login {this.props.name.login}<br/>
-                <img src={this.props.name.avatar_url}/>
+                <img src={this.props.name.avatar_url} alt="Profie Pic"/>
             </div>
         )
     }
 }
 
-function mapStateToProps({name}){
-    return { name }
+function mapStateToProps(state){
+    return { name: state.name }
 }
 
 function mapDispatchToProps(dispatch){
