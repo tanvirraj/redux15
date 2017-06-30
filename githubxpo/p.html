@@ -1,16 +1,45 @@
-fetch('https://api.github.com/users/tanvirraj')
-  .then(
-    function(response) {
-      response.json().then(function(data) {
-        console.log(data.bio);
-      });
-    }
-  )
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Es6 TEst</title>
+</head>
+<body>
+<script type="text/javascript">
+
+tanvir = {
+  name: "tanvir",
+  social: {
+    facebook: "www.facebook.com/T9.raj",
+    twitter: "www.twitter.com/tanvirraj"
+  },
+  education:{
+    highschool:{
+      Schoolname: "Bangladesh Rifles Collage",
+      year: 2010,
+      subject:{
+        ssc: "science",
+        hsc: "commerce"
+      }
+    },
+    university:{
+      name: "Daffodil University",
+      year: 2016
+    },
+  },
+}
+
+// const { name,hsc } = tanvir.education.university;
+const {ssc:s, hsc} = tanvir.education.highschool.subject;
+console.log(s+","+hsc);
 
 
 
-fetch('https://api.github.com/users/tanvirraj')
-  .then( res => { res.json()
-  .then( data => { console.log(data.bio) });
-    }
-  )
+
+
+
+
+
+
+</script>
+</body>
+</html>
